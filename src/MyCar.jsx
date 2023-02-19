@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { setLogout } from "./adminSlice"
 import { getAllCars } from "./ApiRequest"
+import { apiUrl } from "./ApiRequest"
 
 function MyCar() {
     const defaultInput = {
@@ -40,8 +41,8 @@ function MyCar() {
 
         const isEdit = !!formInput.id
 
-        if (isEdit) await axios.put('https://my-json-server.typicode.com/plyss/jdm-car-information/cars' + formInput.id, formInput)
-        else await axios.post('https://my-json-server.typicode.com/plyss/jdm-car-information/cars', formInput)
+        if (isEdit) await axios.put(`${apiUrl}` + formInput.id, formInput)
+        else await axios.post(`${apiUrl}`, formInput)
 
         setFormInput({ ...defaultInput })
         getAllCars(setCars)
@@ -50,12 +51,12 @@ function MyCar() {
     }
 
     const deleteCar = async id => {
-        await axios.delete('https://my-json-server.typicode.com/plyss/jdm-car-information/cars' + id)
+        await axios.delete(`${apiUrl}` + id)
         getAllCars(setCars)
     }
 
     const prepareEdit = async id => {
-        const res = await axios.get('https://my-json-server.typicode.com/plyss/jdm-car-information/cars' + id)
+        const res = await axios.get(`${apiUrl}` + id)
         setFormInput(res.data)
         setIsEdited(true)
         setIsSubmitted(false)

@@ -1,31 +1,33 @@
 import axios from "axios"
 
-const getData = async (url, setFunction) => {
+export const apiUrl = "https://my-json-server.typicode.com/plyss/jdm-car-information/cars"
+
+const getData = async (query, setData) => {
     try {
-        const res = await axios.get(url)
-        setFunction(res.data)
+        const response = await axios.get(`${apiUrl}${query}`);
+        setData(response.data)
     } catch (error) {
         console.log(error)
     }
-}
+};
 
 export const getAllCars = (setCars) => {
-    getData('https://my-json-server.typicode.com/plyss/jdm-car-information/cars', setCars)
-}
+    getData("", setCars)
+};
 
 export const getNewestCars = (setNewestCars) => {
-    getData('https://my-json-server.typicode.com/plyss/jdm-car-information/cars?_sort=year&_order=desc', setNewestCars)
-}
+    getData("?_sort=year&_order=desc", setNewestCars)
+};
 
 export const getLatestArrivals = (setLatestArrivals) => {
-    getData('https://my-json-server.typicode.com/plyss/jdm-car-information/cars?_sort=id&_order=desc', setLatestArrivals)
-}
+    getData("?_sort=id&_order=desc", setLatestArrivals)
+};
 
 export const getCarById = async (carId) => {
     try {
-        const res = await axios.get(`https://my-json-server.typicode.com/plyss/jdm-car-information/cars/${carId}`)
-        return res.data
+        const response = await axios.get(`${apiUrl}/${carId}`);
+        return response.data
     } catch (error) {
         console.log(error)
     }
-}
+};
