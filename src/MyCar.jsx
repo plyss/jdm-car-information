@@ -40,8 +40,8 @@ function MyCar() {
 
         const isEdit = !!formInput.id
 
-        if (isEdit) await axios.put('https://my-json-server.typicode.com/plyss/jdmmockjson/cars' + formInput.id, formInput)
-        else await axios.post('https://my-json-server.typicode.com/plyss/jdmmockjson/cars', formInput)
+        if (isEdit) await axios.put('https://my-json-server.typicode.com/plyss/jdm-car-information/cars' + formInput.id, formInput)
+        else await axios.post('https://my-json-server.typicode.com/plyss/jdm-car-information/cars', formInput)
 
         setFormInput({ ...defaultInput })
         getAllCars(setCars)
@@ -50,12 +50,12 @@ function MyCar() {
     }
 
     const deleteCar = async id => {
-        await axios.delete('https://my-json-server.typicode.com/plyss/jdmmockjson/cars' + id)
+        await axios.delete('https://my-json-server.typicode.com/plyss/jdm-car-information/cars' + id)
         getAllCars(setCars)
     }
 
     const prepareEdit = async id => {
-        const res = await axios.get('https://my-json-server.typicode.com/plyss/jdmmockjson/cars' + id)
+        const res = await axios.get('https://my-json-server.typicode.com/plyss/jdm-car-information/cars' + id)
         setFormInput(res.data)
         setIsEdited(true)
         setIsSubmitted(false)
