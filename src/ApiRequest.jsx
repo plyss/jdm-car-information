@@ -1,13 +1,13 @@
 import axios from "axios"
 
-export const apiUrl = "https://my-json-server.typicode.com/plyss/jdm-car-information/cars"
+export const apiUrl = "https://cottony-glib-concavenator.glitch.me/cars"
 
 const getData = async (query, setData) => {
     try {
         const response = await axios.get(`${apiUrl}${query}`);
         setData(response.data)
     } catch (error) {
-        console.log(error)
+        console.error(error)
     }
 };
 

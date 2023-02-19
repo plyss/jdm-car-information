@@ -41,7 +41,7 @@ function MyCar() {
 
         const isEdit = !!formInput.id
 
-        if (isEdit) await axios.put(`${apiUrl}` + formInput.id, formInput)
+        if (isEdit) await axios.put(`${apiUrl}/${formInput.id}`, formInput)
         else await axios.post(`${apiUrl}`, formInput)
 
         setFormInput({ ...defaultInput })
@@ -51,16 +51,15 @@ function MyCar() {
     }
 
     const deleteCar = async id => {
-        await axios.delete(`${apiUrl}` + id)
+        await axios.delete(`${apiUrl}/${id}`)
         getAllCars(setCars)
     }
 
     const prepareEdit = async id => {
-        const res = await axios.get(`${apiUrl}` + id)
+        const res = await axios.get(`${apiUrl}/${id}`)
         setFormInput(res.data)
         setIsEdited(true)
         setIsSubmitted(false)
-        navigate('/admin')
     }
 
     const carRow = (car) => (
