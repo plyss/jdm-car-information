@@ -1,0 +1,64 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "make": "Mazda",
+      "model": "RX7",
+      "year": 1996,
+      "mileage": 97000,
+      "transmission": "Manual",
+      "drivetrain": "RWD",
+      "image": "https://jdm-expo.com/39991/mazda-rx7-sale.jpg"
+    },
+    {
+      "id": 2,
+      "make": "Toyota",
+      "model": "Supra RZ-S",
+      "year": 1995,
+      "mileage": 110000,
+      "transmission": "Manual",
+      "drivetrain": "RWD",
+      "image": "https://jdm-expo.com/39863/toyota-supra-sale.jpg"
+    },
+    {
+      "make": "Nissan",
+      "model": "Silvia S15",
+      "year": "2002",
+      "mileage": "163000",
+      "transmission": "Manual",
+      "drivetrain": "RWD",
+      "image": "https://jdm-expo.com/39123/nissan-silvia-s15-spec-r-sale.jpg",
+      "id": 3
+    },
+    {
+      "make": "Nissan",
+      "model": "Skyline R34",
+      "year": "1998",
+      "mileage": "146000",
+      "transmission": "Manual",
+      "drivetrain": "RWD",
+      "image": "https://jdm-expo.com/39316/nissan-skyline-r34-for-sale.jpg",
+      "id": 4
+    },
+    {
+      "make": "Toyota",
+      "model": "Chaser",
+      "year": "1996",
+      "mileage": "170000",
+      "transmission": "Manual",
+      "drivetrain": "RWD",
+      "image": "https://jdm-expo.com/37771/toyota-chaser-for-sale.jpg",
+      "id": 5
+    },
+    {
+      "make": "Honda",
+      "model": "NSX type S",
+      "year": "1997",
+      "mileage": "24000",
+      "transmission": "Manual",
+      "drivetrain": "RWD",
+      "image": "https://jdm-expo.com/35404/honda-nsx-sale.jpg",
+      "id": 6
+    }
+  ]
+}
